@@ -1,9 +1,9 @@
 <?php
 	Class Times{
 		private $id;
+		private $participante;
 		private $nome;
-		private $time;
-		private $cel
+		private $cel;
 
 		public function setId($i){
 			$this->id = $i;
@@ -12,18 +12,18 @@
 			return $this->id;
 		}
 
-		public function setNome($n){
-			$this->nome = $n;
+		public function setParticipante($n){
+			$this->participante = $n;
+		}
+		public function getParticipante(){
+			return $this->participante;
+		}
+
+		public function setNome($t){
+			$this->nome = $t;
 		}
 		public function getNome(){
 			return $this->nome;
-		}
-
-		public function setTime($t){
-			$this->time = $t;
-		}
-		public function getTime(){
-			return $this->time;
 		}
 
 		public function setCel($c){

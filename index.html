@@ -1,0 +1,44 @@
+
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<title>Relação-Liga Banfilme</title>
+	<link rel="stylesheet" href="css/materialize.min.css">
+	<link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+	<section class="container" id="filtro">
+		<div class="row">
+			<div class="input-field col s6">
+				<input placeholder="Nome Time" id="nomeTime" type="text" class="validate">
+          		<label for="nomeTime">Nome Time</label>
+			</div>
+			<div class="col s6">
+				<a class="waves-effect waves-light btn" id="btnPesquisa">Verificar</a>
+			</div>
+		</div>	
+	</section>
+	<hr>
+	<div class="row">
+		<div id="painel">
+			<table class="striped">
+				<thead>
+					<tr>
+						<th>Participante</th>
+						<th>Nome</th>
+						<th>Whats</th>
+					</tr>
+				</thead>
+				<tbody id="tableTimes">
+					
+				</tbody>
+			</table>	
+		</div>
+	</div>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/materialize.min.js"></script>
+	<script src="js/main.js"></script>
+</body>
+</html>
