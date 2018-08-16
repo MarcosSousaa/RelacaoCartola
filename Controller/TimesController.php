@@ -23,8 +23,8 @@
 	    }
 
     	public function lista(){
-    		$this->timesModel->setParticipante(isset($_POST['participante']));
-    		$this->timesModel->setNome(isset($_POST['nome']));
+    		$this->timesModel->setParticipante($_POST['participante']);
+    		$this->timesModel->setNome($_POST['nome']);
     		$resultado = $this->timesDAO->lista($this->timesModel);
     		return json_encode($resultado);
     	}

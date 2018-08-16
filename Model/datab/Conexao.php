@@ -1,14 +1,14 @@
 <?php
 	
 	Class Conexao{	
-		protected static $db;	
+            protected static $db;	
 		
-		public function __construct(){
-		 	$db_host = "localhost";
-	        $db_nome = "cartola";
-	        $db_usuario = "root";
-	        $db_senha = "";
-	        $db_driver = "mysql";
+            public function __construct(){
+                $db_host = "localhost";
+                $db_nome = "cartola";
+                $db_usuario = "root";
+                $db_senha = "";
+                $db_driver = "mysql";
 
 	        try{
 	            # Atribui o objeto PDO à variável $db.

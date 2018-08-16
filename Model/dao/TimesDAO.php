@@ -9,23 +9,24 @@
 			$this->pdo = Conexao::conexao();
 		}
 
-
-
-		public function lista(Times $times){
+                public function lista(Times $times){
+			
 			try{
-				$sql = "select * from times where participante LIKE ':participante' OR nome LIKE ':nome'";
+				$sql = "select * from times where participante LIKE ? OR nome LIKE ? ORDER BY nome";
 				$query = $this->pdo->prepare($sql);
-				$query->bindParam("participante","%{$times->getParticipante()}%");
-				$query->bindParam("nome","%{$times->getNome()}%");
+				$participante = '%'.$times->getParticipante().'%';
+				$nome = '%'.$times->getNome().'%';
+				$query->bindParam(1,$participante);
+				$query->bindParam(2,$nome);
 				$query->execute();
 				$table = "";
 				if($query->rowCount() > 0){
 					$result = $query->fetchAll();
 					foreach($result as $row){
 						$liga = $row['status_liga'] <> "" ? "PAGO" : "PENDENTE";
-						$hattrick = $row['status_liga'] <> "" ? "PAGO" : "PENDENTE";
-						$turno = $row['status_turno'] <> "" ? "PAGO" : "PENDENTE";
-						$table .= '<tr><td>'.$row['participante'].'</td><td>'.$row['nome'].'</td><td>'.$row['cel'].'</td><td>'.$liga.'</td><td>'.$hattrick.'</td><td>'.$turno.'</td></tr>';
+						$hattrick = $row['status_hattrick1'] <> "" ? "PAGO" : "PENDENTE";
+						$turno = $row['status_turno'] <> "" ? "PAGO" : "PENDENTE";			
+						$table .= '<tr><td>'.$row['participante'].'</td><td>'.$row['nome'].'</td><td>'.$liga.'</td><td>'.$turno.'</td><td>'.$hattrick.'</td></tr>';
 					}
 					return $table;	
 				}

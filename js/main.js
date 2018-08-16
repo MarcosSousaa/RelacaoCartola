@@ -1,5 +1,5 @@
 $(document).ready(function(){
-
+        var url = 'http://localhost/RelacaoCartola/Controller/'
 	$('#painel').hide();
 
 	$('#btnPesquisa').click(function(){
@@ -10,7 +10,7 @@ $(document).ready(function(){
 		$('#tableTimes').empty();
 		$.ajax({
 			type: 'POST',
-			url: 'Controller/Action.php',
+			url: url+'Action.php',
 			data: {acao:0,participante:participante,nome:participante}
 		}).done(function(result){
 			$('#painel').show();
