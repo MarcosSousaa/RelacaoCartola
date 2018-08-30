@@ -4,11 +4,16 @@
             protected static $db;	
 		
             public function __construct(){
-                $db_host = "localhost";
-                $db_nome = "cartola";
-                $db_usuario = "root";
-                $db_senha = "";
-                $db_driver = "mysql";
+                // $db_host = "localhost";
+                // $db_nome = "id6835590_cartola";
+                // $db_usuario = "id6835590_cartola";
+                // $db_senha = "cartola";
+                // $db_driver = "mysql";
+                 $db_host = "localhost";
+                 $db_nome = "cartola";
+                 $db_usuario = "root";
+                 $db_senha = "";
+                 $db_driver = "mysql";
 
 	        try{
 	            # Atribui o objeto PDO à variável $db.
