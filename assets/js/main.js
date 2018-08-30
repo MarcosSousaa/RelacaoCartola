@@ -1,13 +1,18 @@
 $(document).ready(function(){
-        var url = 'http://localhost/RelacaoCartola/Controller/'
+        //var url = '/Controller/'
+        var url = '/RelacaoCartola/Controller/'
+        var flag = true;
 	$('#painel').hide();
 
 	$('#btnPesquisa').click(function(){
+		$('#tableTimes').empty();
+		flag = true;
 		if($('#nomeTime').val() < 2){
       	  M.toast({html: 'INFORME O NOME DO TIME', classes: 'rounded'});
+      	  flag = false;
 		}
-		var participante = $('#nomeTime').val();
-		$('#tableTimes').empty();
+		var participante = $('#nomeTime').val();		
+		if(flag){
 		$.ajax({
 			type: 'POST',
 			url: url+'Action.php',
@@ -16,8 +21,9 @@ $(document).ready(function(){
 			$('#painel').show();
 			$('table tbody').html(result);
 		}).fail(function(){
-			M.toast({html: 'NAO FOI POSSIVEL REALIZAR OS DADOS', classes: 'rounded'});
+			M.toast({html: 'NAO FOI TRAZER OS DADOS VERIFIQUE COM O ADM', classes: 'rounded'});
 		});
+		}		
 	});
 
 });

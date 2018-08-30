@@ -5,19 +5,21 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Relação-Liga Banfilme</title>
-	<link rel="stylesheet" href="css/materialize.min.css">
-	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="assets/css/materialize.min.css">
+	<link rel="stylesheet" href="assets/css/main.css">
 </head>
 <body>
 	<div class="row" id="title">
-			<h5 class="center">RELAÇÃO DE PAGAMENTOS - LIGA BANFILME</h5>
-		</div>
+		<div class="col s4"></div>
+		<div id="logo" class="col s4"></div>		
+		<h5 class="center">RELAÇÃO DE PAGAMENTOS</h5>
+			
+	</div>
 	<section class="container" id="filtro">				
-		<div class="row">	
-			<div class="col s4"></div>		
-			<div class="input-field col s4">
-				<input placeholder="Nome Time" id="nomeTime" type="text" class="validate">
-          		<label for="nomeTime">Nome Time</label>
+		<div class="row">		
+			<div class="input-field col s8">
+				<input placeholder="Nome Participante/Time" id="nomeTime" type="text" class="validate">
+          		<label for="nomeTime">Nome Partipante/Time</label>
 			</div>
 			<div class="col s4">
 				<a class="waves-effect waves-light btn" id="btnPesquisa">Verificar</a>
@@ -27,11 +29,11 @@
 	<hr>
 	<div class="row">
 		<div id="painel">
-			<table class="striped">
+			<table class="bordered striped centered highlight responsive-table">
 				<thead>
 					<tr>
-						<th>Participante</th>
 						<th>Nome Time</th>
+						<th>Participante</th>
 						<th>R$ Liga</th>
 						<th>R$ Campeão 1 - Turno</th>
 						<th>R$ Hat-Trick Rodada 9 </th>
@@ -43,8 +45,8 @@
 			</table>	
 		</div>
 	</div>
-	<script src="js/jquery.min.js"></script>
-	<script src="js/materialize.min.js"></script>
-	<script src="js/main.js"></script>
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/materialize.min.js"></script>
+	<script src="assets/js/main.js"></script>
 </body>
 </html>

@@ -26,11 +26,28 @@
 						$liga = $row['status_liga'] <> "" ? "PAGO" : "PENDENTE";
 						$hattrick = $row['status_hattrick1'] <> "" ? "PAGO" : "PENDENTE";
 						$turno = $row['status_turno'] <> "" ? "PAGO" : "PENDENTE";			
-						$table .= '<tr><td>'.$row['participante'].'</td><td>'.$row['nome'].'</td><td>'.$liga.'</td><td>'.$turno.'</td><td>'.$hattrick.'</td></tr>';
+						$table .= '<tr><td>'.$row['participante'].'</td>';
+						$table .= '<td>'.$row['nome'].'</td>';
+						if($liga == "PAGO"){
+							$table .= "<td style='color:#2ecc71;'>".$liga."</td>";
+						}
+						else {
+							$table .= "<td style='color:#e74c3c;'>".$liga."</td>";
+						}
+						if($turno == "PAGO"){
+							$table .= "<td style='color:#2ecc71;'>".$turno."</td>";
+						}else{
+							$table .= "<td style='color:#e74c3c;'>".$turno."</td>";
+						}
+						if($hattrick == "PAGO"){
+							$table .= "<td style='color:#2ecc71;'>".$hattrick."</td>";
+						}else{
+							$table .= "<td style='color:#e74c3c;'>".$hattrick."</td>";
+						}						
 					}
 					return $table;	
 				}
-			
+				
 			}catch(Exception $e){
 				echo $e->getMessage();
 			}
