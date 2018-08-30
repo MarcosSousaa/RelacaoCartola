@@ -5,7 +5,8 @@ if( ! defined('ABSPATH') )
 /** DEFININDO CAMINHO API BD */
 if(! defined('DBAPI') )
 	define('DBAPI', ABSPATH . 'Model/datab/Conexao.php');
-/** TEMPLATES **/
-define('HEADER_TEMPLATE', ABSPATH. 'include/header.php');
-define('FOOTER_TEMPLATE', ABSPATH. 'include/footer.php');
-define('MENU_TEMPLATE', ABSPATH. 'include/menu.php');
+/** DEFININDO URL **/
+if( ! defined('BASEURL') )
+	define('BASEURL',	'/RelacaoCartola/');
+
+

@@ -23,11 +23,13 @@
 	    }
 
     	public function lista(){
-    		$this->timesModel->setParticipante($_POST['participante']);
-    		$this->timesModel->setNome($_POST['nome']);
+    		$this->timesModel->setParticipante(addslashes(filter_input(INPUT_POST,'participante')));
+    		$this->timesModel->setNome(addslashes(filter_input(INPUT_POST, 'nome')));
     		$resultado = $this->timesDAO->lista($this->timesModel);
     		return json_encode($resultado);
     	}
+
+
 	}
 
 ?>

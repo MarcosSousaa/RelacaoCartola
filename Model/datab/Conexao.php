@@ -18,7 +18,7 @@
 	            # Garante que os dados sejam armazenados com codificação UFT-8.
 	            self::$db->exec('SET NAMES utf8');
         	}catch (PDOException $e){
-            echo $e->getMessage();
+                echo $e->getMessage();
         	}
 		}
 
